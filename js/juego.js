@@ -139,27 +139,45 @@ var chequearSiGano = function() {
 	}
 };
 
+var contadorDeMovimientos=
+{
+	_cuenta:0,
+	aumentarCuenta:function()
+	{
+		this._cuenta=this.getCuenta() +1;
+		console.log(this.getCuenta());
+	},
+	getCuenta: function()
+	{
+		return this._cuenta;
+	}
+};
+
+
 $('body').keydown(function(e) {
-	console.log(e.which);
 	if(e.which == 37) {
 		// izquierda
 		espacioVacio.moverDerecha();
 		chequearSiGano();
+		contadorDeMovimientos.aumentarCuenta();
 	}
 	if(e.which == 38) {
 		// arriba
 		espacioVacio.moverAbajo();
 		chequearSiGano();
+		contadorDeMovimientos.aumentarCuenta();
 	}
 	if(e.which == 39) {
 		// derecha
 		espacioVacio.moverIzquierda();
 		chequearSiGano();
+		contadorDeMovimientos.aumentarCuenta();
 	}
 	if(e.which == 40) {
 		// abajo
 		espacioVacio.moverArriba();
 		chequearSiGano();
+		contadorDeMovimientos.aumentarCuenta();
 	}
 });
 
