@@ -165,7 +165,7 @@ $('body').keydown(function(e) {
 
 piezas.crear();
 
-for(var movimientos = 0; movimientos < 2; movimientos++) {
+for(var movimientos = 0; movimientos < 100; movimientos++) {
 	var numeroAleatorio = Math.random();
 	if(numeroAleatorio < 0.25) {
 		espacioVacio.moverArriba();
